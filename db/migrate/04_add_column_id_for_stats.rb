@@ -1,0 +1,1 @@
+class AddColumnIdForStats < ActiveRecord::Migrations

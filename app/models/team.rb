@@ -10,4 +10,8 @@ class Team < ActiveRecord::Base
     Player.all.select{|player| player.team == self}
   end
 
+  def win_loss
+    
+  end
+
 end

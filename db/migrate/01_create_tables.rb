@@ -2,7 +2,6 @@ class CreateTables < ActiveRecord::Migration[4.2]
   def change
     create_table :teams do |t|
       t.string :name
-      t.boolean :home
     end
 
     create_table :players do |t|
@@ -21,5 +20,8 @@ class CreateTables < ActiveRecord::Migration[4.2]
       t.string :role
     end
 
+    create_table :stats do |t|
+      t.references :season, polymorphic: true, index: true
+    end
   end
 end

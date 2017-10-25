@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 1) do
+ActiveRecord::Schema.define(version: 3) do
 
   create_table "coaches", force: :cascade do |t|
     t.integer "team_id"
@@ -27,12 +27,27 @@ ActiveRecord::Schema.define(version: 1) do
     t.integer "jersey_number"
     t.string "position"
     t.boolean "active"
+    t.string "birth_place"
+    t.string "birthday"
+    t.string "college"
+    t.string "experience"
+    t.string "height"
+    t.string "weight"
     t.index ["team_id"], name: "index_players_on_team_id"
+  end
+
+  create_table "stats", force: :cascade do |t|
+    t.string "season_type"
+    t.integer "season_id"
+    t.integer "touchdowns"
+    t.integer "yards"
+    t.integer "fumbles"
+    t.integer "interceptions"
+    t.index ["season_type", "season_id"], name: "index_stats_on_season_type_and_season_id"
   end
 
   create_table "teams", force: :cascade do |t|
     t.string "name"
-    t.boolean "home"
   end
 
 end

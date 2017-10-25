@@ -1,1 +1,4 @@
 db/nfldb.sql
+
+#git reset --soft #log_number => resets the file up to that load point
+#git log => pulls up the log of commits to reference the log number

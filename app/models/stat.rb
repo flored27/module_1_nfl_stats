@@ -1,5 +1,5 @@
 class Stat < ActiveRecord::Base
-  belongs_to :season, polymorphic: true
-
+  belongs_to :player
+  belongs_to :coach
 
 end
